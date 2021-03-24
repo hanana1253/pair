@@ -6,20 +6,41 @@ const todos = [
   { id: 2, content: 'CSS', completed: true },
   { id: 1, content: 'Javascript', completed: false }
 ];
+// map을 써보자
 
-function render() {
-  let html = '';
+// function render(){
+//   return todos.map(todo => {
+//     return `<li id="${todo.id}">
+//     <label><input type="checkbox" ${todo.completed? "checked":""}>${todo.content}</label>
+//     </li>`
+//   }).join('');
+// }
 
-  todos.forEach(todo => {
-    html += `<li id=${todo.id}>
-    <label><input type="checkbox" ${todo.completed ? "checked":""}>${todo.content}</label>
+// 객체 디스트럭쳐링 할당을 활용해보자
+function render(){
+  return todos.map(({id, content, completed}) => {
+    return `<li id="${id}">
+    <label><input type="checkbox" ${ completed ? "checked" : "" }>${content}</label>
     </li>`
-  });
-
-  return html;
+  }).join('');
 }
-
 console.log(render());
+
+// forEach 사용
+
+// function render() {
+//   let html = '';
+
+//   todos.forEach(todo => {
+//     html += `<li id=${todo.id}>
+//     <label><input type="checkbox" ${todo.completed ? "checked":""}>${todo.content}</label>
+//     </li>`
+//   });
+
+//   return html;
+// }
+
+// console.log(render());
 /*
 <li id="3">
   <label><input type="checkbox">HTML</label>

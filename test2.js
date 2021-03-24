@@ -9,9 +9,12 @@ const todos = [
   { id: 1, content: 'Javascript', completed: false }
 ];
 
-function getValues(key) {
-  return todos.map(todo => todo[key]);
-}
+// function getValues(key) {
+//   return todos.map(todo => todo[key]);
+// }
+// 화살표함수를 사용할수도 있다
+
+const getValues = key => todos.map(todo => todo[key]);
 
 console.log(getValues('id')); // [3, 2, 1]
 console.log(getValues('content')); // ['HTML', 'CSS', 'Javascript']
