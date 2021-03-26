@@ -1,18 +1,20 @@
+// 3. 프로퍼티 정렬
+// 요소의 프로퍼티(id, content, completed)를 문자열 인수로 전달하면 todos의 요소를 정렬하는 함수를 작성하라.
+// 단, todos는 변경되지 않도록 하자.
+// 참고: Array.prototype.sort
+
 const todos = [
   { id: 3, content: 'HTML', completed: false },
   { id: 2, content: 'CSS', completed: true },
   { id: 1, content: 'Javascript', completed: false }
 ];
 
-function sortBy(key) {
-  // return key === 'content' ? todos.slice().sort() : todos.slice().sort((a,b) =>(a[key]-b[key]));
-  return todos.slice().sort((a,b) => (a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0)));
-<<<<<<< HEAD
-=======
-  
-//a,b로 이름지은것은 todo1, todo2로 이름지으면 더 낫다.
->>>>>>> 5708051693a901cfb1f0abccbdbd4ffb3368bf31
-}
+// function sortBy(key) {
+//   return [...todos].sort((todo1, todo2) => todo1[key] < todo2[key] ? -1 : (todo1[key] > todo2[key] ? 1 : 0));
+// }
+
+// 화살표함수로도 가능
+const sortBy = key => [... todos].sort((todo1, todo2) => todo1[key] < todo2[key] ? -1 : (todo1[key] > todo2[key] ? 1 : 0));
 
 console.log(sortBy('id'));
 /*
