@@ -37,7 +37,7 @@ const toggleTodo = id => {
   render();
 }
 
-document.addEventListener('DOMContentLoaded', getTodos);
+document.addEventListener('DOMContentLoaded', getTodos);//브라우저 창을 키면,DOM content가 완전히 load되면 getTodos를 실행하라.
 
  
 // document.querySelector('.add').onclick = () => {

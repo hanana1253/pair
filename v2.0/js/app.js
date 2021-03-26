@@ -19,12 +19,17 @@ const render = ()=>{
 
 document.addEventListener('DOMContentLoaded', render);
 
+const generateNextId = () => {
+  return Math.max(...todos.map(todo => todo.id)) + 1;
+}
+
 const addTodo = () => {
-  todos = [ { id: 3, content: document.querySelector('.input-todo').value, completed: false }, ... todos ];
+  todos = [ { id: generateNextId(), content: document.querySelector('.input-todo').value, completed: false }, ... todos ];
   render();
 }
 
 document.querySelector('.input-todo').onkeydown = e => {
   if ( e.key !== 'Enter') return;
   addTodo();
+  document.querySelector('.input-todo').value = '';
 }
