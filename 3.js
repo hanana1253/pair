@@ -7,6 +7,11 @@ const todos = [
 function sortBy(key) {
   // return key === 'content' ? todos.slice().sort() : todos.slice().sort((a,b) =>(a[key]-b[key]));
   return todos.slice().sort((a,b) => (a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0)));
+<<<<<<< HEAD
+=======
+  
+//a,b로 이름지은것은 todo1, todo2로 이름지으면 더 낫다.
+>>>>>>> 5708051693a901cfb1f0abccbdbd4ffb3368bf31
 }
 
 console.log(sortBy('id'));
